@@ -1,3 +1,8 @@
+import pytest
+
+
+
+
 import click
 from selenium import webdriver
 from selenium.common.exceptions import ElementClickInterceptedException
@@ -15,8 +20,9 @@ def hello(count, name):
     WebDriverWait(client, 10, 0.5).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#su")))
     for _ in range(count):
         click.echo(f"hello {name}")
+
+def main():
     pytest.main()
 
-hello()
-
-
+if __name__ == '__main__':
+    main()
