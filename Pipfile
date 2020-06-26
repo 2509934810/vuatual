@@ -10,6 +10,7 @@ selenium = "*"
 click = "*"
 pre-commit = "*"
 pytest = "*"
+pytest-parallel = "*"
 
 [requires]
 python_version = "3.7"

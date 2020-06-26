@@ -2,3 +2,4 @@
 build/
 dist/
 vuatual.egg-info/
+*.log

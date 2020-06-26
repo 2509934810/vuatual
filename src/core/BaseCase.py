@@ -9,3 +9,6 @@ class BaseCase(pytest.Item):
 
     def runtest(self):
         print(self.caseItem)
+
+    def _runcheck():
+        pass

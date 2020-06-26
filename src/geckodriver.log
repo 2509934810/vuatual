@@ -1,0 +1,69 @@
+1593188204403	mozrunner::runner	INFO	Running command: "/usr/local/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile6st3P5"
+1593188204404	mozrunner::runner	INFO	Running command: "/usr/local/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilen9dqo3"
+1593188204404	mozrunner::runner	INFO	Running command: "/usr/local/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileetpeXa"
+1593188204405	mozrunner::runner	INFO	Running command: "/usr/local/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile24gQbH"
+
+(firefox:23721): GLib-GObject-CRITICAL **: 00:16:44.447: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+
+(firefox:23727): GLib-GObject-CRITICAL **: 00:16:44.451: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+
+(firefox:23723): GLib-GObject-CRITICAL **: 00:16:44.452: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+
+(firefox:23726): GLib-GObject-CRITICAL **: 00:16:44.452: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+
+(/usr/local/firefox/firefox-bin:24019): GLib-GObject-CRITICAL **: 00:16:46.543: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+
+(/usr/local/firefox/firefox-bin:24073): GLib-GObject-CRITICAL **: 00:16:46.642: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+
+(/usr/local/firefox/firefox-bin:24074): GLib-GObject-CRITICAL **: 00:16:46.661: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+
+(/usr/local/firefox/firefox-bin:24096): GLib-GObject-CRITICAL **: 00:16:46.764: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+
+(/usr/local/firefox/firefox-bin:24119): GLib-GObject-CRITICAL **: 00:16:46.896: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+
+(/usr/local/firefox/firefox-bin:24125): GLib-GObject-CRITICAL **: 00:16:46.956: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+
+(/usr/local/firefox/firefox-bin:24159): GLib-GObject-CRITICAL **: 00:16:47.216: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+
+(/usr/local/firefox/firefox-bin:24214): GLib-GObject-CRITICAL **: 00:16:47.666: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+
+(/usr/local/firefox/firefox-bin:24451): GLib-GObject-CRITICAL **: 00:16:50.130: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+
+(/usr/local/firefox/firefox-bin:24450): GLib-GObject-CRITICAL **: 00:16:50.145: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+
+(/usr/local/firefox/firefox-bin:24497): GLib-GObject-CRITICAL **: 00:16:50.586: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+1593188210600	Marionette	INFO	Listening on port 38181
+1593188210638	Marionette	INFO	Listening on port 43583
+1593188210677	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/local/firefox/firefox-bin:24505): GLib-GObject-CRITICAL **: 00:16:50.746: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+1593188210882	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593188211511	Marionette	INFO	Listening on port 40739
+1593188211569	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593188211980	Marionette	INFO	Listening on port 44245
+1593188212038	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593188216476	Marionette	INFO	Stopped listening on port 43583
+1593188216952	Marionette	INFO	Stopped listening on port 38181
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1593188218670	Marionette	INFO	Stopped listening on port 40739
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1593188219578	mozrunner::runner	INFO	Running command: "/usr/local/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilewIwJuH"
+
+(firefox:24627): GLib-GObject-CRITICAL **: 00:16:59.605: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+
+(/usr/local/firefox/firefox-bin:24722): GLib-GObject-CRITICAL **: 00:17:00.622: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+
+(/usr/local/firefox/firefox-bin:24740): GLib-GObject-CRITICAL **: 00:17:00.759: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+
+(/usr/local/firefox/firefox-bin:24839): GLib-GObject-CRITICAL **: 00:17:02.000: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
+1593188222075	Marionette	INFO	Listening on port 43909
+1593188222093	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593188223721	Marionette	INFO	Stopped listening on port 43909
+1593188228599	Marionette	INFO	Stopped listening on port 44245
