@@ -3,3 +3,4 @@ build/
 dist/
 vuatual.egg-info/
 *.log
+src/*.log
