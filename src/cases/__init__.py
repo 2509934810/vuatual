@@ -1,4 +1,4 @@
 from .WebCase import WebCase
 
 
-CASETYPE = {"webcase": WebCase}
+CASETYPE = {"web": WebCase}

@@ -1,0 +1,16 @@
+type: web
+config:
+  authType: baseAuth
+  accountInfo:
+    account_xpath: ""
+    account: ""
+  passwordInfo:
+    password_xpath: ""
+    password: ""
+  submit_xpath: ""
+
+cases:
+- name: test-1
+  check: hello
+- name: tets-2
+  check: hello

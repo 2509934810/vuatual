@@ -1,6 +1,7 @@
 import pytest
 import yaml
 from cases import CASETYPE
+from utils.exceptions import CaseParserError, CaseTypeNotFound
 
 
 def pytest_collection_modifyitems(config, items):
@@ -22,15 +23,31 @@ def pytest_collection_modifyitems(config, items):
 
 def pytest_collect_file(parent, path):
     allowYamlFile = [".yaml", ".yml"]
-    if path.ext in allowYamlFile and path.basename.startswitch("test"):
+    if path.ext in allowYamlFile and path.basename.startswith("test"):
         return YamlFile(path, parent)
 
 
 class YamlFile(pytest.File):
     def collect(self):
-        cases = yaml.safe_load(self.fspath.open(encoding="utf-8"))
-        for key, value in cases.items():
-            yield CASETYPE.get("webcase")(name, self, value)
+        items = yaml.safe_load(self.fspath.open(encoding="utf-8"))
+        if not isinstance(items, dict):
+            raise CaseParserError("case file must be a dict")
+        caseType, cases, authConfig = (
+            items.get("type"),
+            items.get("cases"),
+            items.get("config"),
+        )
+        # check case
+        _checkCaseType(caseType)
+        for case in cases:
+            yield CASETYPE.get(caseType)(case.get("name"), self, case, authConfig)
+
+
+def _checkCaseType(caseType):
+    if caseType not in CASETYPE.keys():
+        raise CaseTypeNotFound(
+            "the {} case is not supported in our framework".format(caseType)
+        )
 
 
 def pytest_addoption(parser):
