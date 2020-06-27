@@ -4,6 +4,9 @@ from .ActionValidate import (
     ClickCssValidate,
     ClickXpathValidate,
     TakeScreenShot,
+    InputCss,
+    InputXpath,
+    Sleep,
 )
 
 
@@ -13,4 +16,8 @@ ACTION = {
     "click_css": ClickCssValidate,
     "click_xpath": ClickXpathValidate,
     "takeshot": TakeScreenShot,
+    "input_css": InputCss,
+    "input_xpath": InputXpath,
+    "sleep": Sleep,
+    # "download_html":
 }

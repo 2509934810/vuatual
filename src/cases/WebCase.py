@@ -37,11 +37,16 @@ def _runcheck(client, name, checkBody):
     body = checkBody.get("body")
     checkType = checkBody.get("type")
     timeout = checkBody.get("timeout")
+    # 确定验证类型
+    ACTION_KEYS = ACTION.keys()
+    assert checkType in ACTION_KEYS
     if checkType == "takeshot":
         filePath = os.path.join(os.path.abspath(os.path.curdir), "tmp/screenshot")
         if not os.path.exists(filePath):
             os.makedirs(filePath)
         fileName = os.path.join(filePath, "{}_{}.png".format(name, body))
         ACTION.get(checkType)(client, fileName).check()
+    elif checkType == "sleep":
+        ACTION.get(checkType)(client, body).check()
     else:
         ACTION.get(checkType)(client, body, timeout).check()
