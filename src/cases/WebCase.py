@@ -37,7 +37,7 @@ def _runcheck(client, name, checkBody):
     body = checkBody.get("body")
     checkType = checkBody.get("type")
     timeout = checkBody.get("timeout")
-    filePath = os.path.join(os.path.abspath(os.path.curdir), "dwnHtml")
+    filePath = os.path.join(os.path.abspath(os.path.curdir), "dwnHtml/{}".format(name))
     if not os.path.exists(filePath):
         os.makedirs(filePath)
     # 确定验证类型
