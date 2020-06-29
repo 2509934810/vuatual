@@ -1,5 +1,6 @@
 import os
 import time
+import random
 from .clientAction import (
     find_element_by_css,
     find_element_by_xPath,
@@ -12,7 +13,7 @@ from .clientAction import (
     check_element_by_xpath_can_click,
     check_element_by_xpath_can_find,
 )
-from utils.exceptions import CaseFormatError, CaseRunError
+from utils.exceptions import CaseFormatError, CaseRunError, ElementNotFound
 
 
 class FindCssValidate(object):
@@ -114,15 +115,12 @@ class Sleep(object):
         time.sleep(self.body)
 
 
-from selenium import webdriver
-
-client = webdriver.Chrome()
-
-
-class DownloadHtml(object):
-    def __init__(self, client, filePath):
+class DownloadHtml_c(object):
+    def __init__(self, client, body, filePath, timeout):
         self.client = client
         self.filePath = filePath
+        self.timeout = timeout
+        self.body = body
 
     def check(self):
         if not os.path.exists(self.filePath):
@@ -130,4 +128,76 @@ class DownloadHtml(object):
         fileName = os.path.join(
             self.filePath, "{}.html".format(self.client.current_url)
         )
-        # to add download
+        for ele in self.body:
+            if not check_element_by_css_can_find(self.client, self.timeout, 0.5, ele):
+                raise ElementNotFound("{} not Found".format(ele))
+        currentUrl = self.client.current_url
+        pageSourceContent = self.client.page_source
+        fileName = os.path.join(
+            self.filePath, "{}.html".format(random.randrange(1, 1000))
+        )
+        with open(fileName, "w") as f:
+            f.write(pageSourceContent)
+
+
+class DownloadHtml_x(object):
+    def __init__(self, client, body, filePath, timeout):
+        self.client = client
+        self.filePath = filePath
+        self.timeout = timeout
+        self.body = body
+
+    def check(self):
+        if not os.path.exists(self.filePath):
+            os.makedirs(self.filePath)
+        fileName = os.path.join(
+            self.filePath, "{}.html".format(self.client.current_url)
+        )
+        for ele in self.body:
+            if not check_element_by_xpath_can_find(self.client, self.timeout, 0.5, ele):
+                raise ElementNotFound("{} not Found".format(ele))
+        currentUrl = self.client.current_url
+        pageSourceContent = self.client.page_source
+        fileName = os.path.join(
+            self.filePath, "{}.html".format(random.randrange(1, 1000))
+        )
+        with open(fileName, "w") as f:
+            f.write(pageSourceContent)
+
+
+class DownBanner_css(object):
+    def __init__(self, client, body, filePath, timeout):
+        self.client = client
+        self.body = body
+        self.filePath = filePath
+        self.timeout = timeout
+
+    def check(self):
+        if not os.path.exists(self.filePath):
+            os.makedirs(self.filePath)
+        for ele in self.body:
+            if not check_element_by_css_can_find(self.client, self.timeout, 0.5, ele):
+                raise ElementNotFound("{} not found".format(ele))
+            fileBody = find_element_by_css(self.client, ele).text
+            fileName = os.path.join(self.filePath, "{}.html".format(ele))
+            with open(fileName, "w") as f:
+                f.write(fileBody)
+
+
+class DownBanner_xpath(object):
+    def __init__(self, client, body, filePath, timeout):
+        self.client = client
+        self.body = body
+        self.filePath = filePath
+        self.timeout = timeout
+
+    def check(self):
+        if not os.path.exists(self.filePath):
+            os.makedirs(self.filePath)
+        for ele in self.body:
+            if not check_element_by_xpath_can_find(self.client, self.timeout, 0.5, ele):
+                raise ElementNotFound("{} not found".format(ele))
+            fileBody = find_element_by_xPath(self.client, ele).text
+            fileName = os.path.join(self.filePath, "{}.html".format(ele))
+            with open(fileName, "w") as f:
+                f.write(fileBody)

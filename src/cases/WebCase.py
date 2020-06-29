@@ -37,6 +37,9 @@ def _runcheck(client, name, checkBody):
     body = checkBody.get("body")
     checkType = checkBody.get("type")
     timeout = checkBody.get("timeout")
+    filePath = os.path.join(os.path.abspath(os.path.curdir), "dwnHtml")
+    if not os.path.exists(filePath):
+        os.makedirs(filePath)
     # 确定验证类型
     ACTION_KEYS = ACTION.keys()
     assert checkType in ACTION_KEYS
@@ -48,5 +51,12 @@ def _runcheck(client, name, checkBody):
         ACTION.get(checkType)(client, fileName).check()
     elif checkType == "sleep":
         ACTION.get(checkType)(client, body).check()
+    elif (
+        checkType == "dwn_html_css"
+        or checkType == "dwn_html_xpath"
+        or checkType == "dwn_banner_css"
+        or checkType == "dwn_banner_xpath"
+    ):
+        ACTION.get(checkType)(client, body, filePath, timeout).check()
     else:
         ACTION.get(checkType)(client, body, timeout).check()

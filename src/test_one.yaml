@@ -32,7 +32,20 @@ cases:
     timeout: 10
   - type: sleep
     body: 10
-  - type: download_html
+  - type: dwn_html_css
+    body:
+    - '#su'
+    timeout: 10
+  - type: dwn_banner_css
+    body:
+    - '#su'
+    - '#\31  > h3 > a'
+    - '#s_tab > div > a.s-tab-item.s-tab-b2b'
+    timeout: 10
+  # - type: d_css_s
+  #   body:
+  #   - ''
+  #   timeout: 10
   # - type:
   # - type
   # - type: takeshot

@@ -28,3 +28,11 @@ class CaseRunError(Exception):
 
     def __str__(self):
         return self.msg
+
+
+class ElementNotFound(object):
+    def __init__(self):
+        self.msg = msg
+
+    def __str__(self):
+        return self.msg
