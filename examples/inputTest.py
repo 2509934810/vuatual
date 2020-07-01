@@ -1,5 +1,13 @@
-from selenium import webdriver
+import socket
 
-client = webdriver.Chrome()
-client.get("http://www.baidu.com")
-client.find_element_by_xpath('//*[@id="kw"]').send_keys("鸡蛋")
+
+conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+url = "182.61.200.7"
+port = 80
+
+conn.connect((url, port))
+
+conn.send("hello".encode("utf-8"))
+
+print(conn.recv(1024))

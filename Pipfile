@@ -11,6 +11,8 @@ click = "*"
 pre-commit = "*"
 pytest = "*"
 pytest-parallel = "*"
+requests = "*"
+pymysql = "*"
 
 [requires]
 python_version = "3.7"

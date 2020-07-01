@@ -1,0 +1,33 @@
+type: scan
+config:
+  authType: None
+  save:
+    type: disk
+    path: ./
+  # save:
+  #   type: sql
+  #   url: mysql
+  #   username: lei
+  #   password: lei123
+  # save:
+  #   type: nosql
+  #   url: %%%
+  #   username: lei
+  #   password: lei
+cases:
+- name: test-1
+  ip: 192.168.124.1-24
+  type: tcp
+  port:
+  - 80
+  - 8080
+  - 1000
+  - 22
+- name: test-2
+  ip: 192.168.124.1/24
+  type: tcp
+  port:
+  - 80
+  - 8080
+  - 1000
+  - 22
