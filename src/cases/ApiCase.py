@@ -1,6 +1,7 @@
 from core import BaseCase
 import pytest
 from utils.apiUtils.getSession import getSession
+from utils.apiUtils import ACTION
 
 
 class ApiCase(BaseCase):
@@ -18,5 +19,6 @@ class ApiCase(BaseCase):
         else:
             session = getSession().post(url)
         for action in self.caseItem.get("check"):
-            pass
-            # add check
+            ACTION.get(action.get("type"))(
+                session, self.caseItem, self.authConfig
+            ).check()

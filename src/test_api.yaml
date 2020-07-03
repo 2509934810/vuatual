@@ -6,6 +6,7 @@ config:
     url: mysql
     username: lei
     password: lei123
+    dbName: vuatual
 
 cases:
 - name: test_1
@@ -14,10 +15,17 @@ cases:
   check:
   - type: get_title
     timeout: 10
-  - type: get_content
-    #正则表达式
-    body:
-    - ''
+  # - type: get_content
+  #   #正则表达式
+  #   body:
+  #   - ''
 - name: test_2
   ip: http://www.taobao.com
   type: get
+  check:
+  - type: get_title
+    timeout: 10
+  # - type: get_content
+  #   #正则表达式
+  #   body:
+  #   - ''
