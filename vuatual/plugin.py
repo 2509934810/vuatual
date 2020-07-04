@@ -1,7 +1,7 @@
 import pytest
 import yaml
-from cases import CASETYPE
-from utils.exceptions import CaseParserError, CaseTypeNotFound
+from vuatual.cases import CASETYPE
+from vuatual.utils.exceptions import CaseParserError, CaseTypeNotFound
 
 
 def pytest_collection_modifyitems(config, items):
@@ -12,7 +12,6 @@ def pytest_collection_modifyitems(config, items):
     for item in items:
         item.name = item.name.encode("utf-8").decode("unicode_escape")
         item._nodeid = item.nodeid.encode("utf-8").decode("unicode_escape")
-        print(item.name)
 
 
 # def pytest_collect_directory(path, parent):

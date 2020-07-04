@@ -50,35 +50,35 @@ cases:
   # - type
   # - type: takeshot
   #   body: '1'
-# - name: tets-2
-#   url: http://www.baidu.com
-#   check:
-#   - type: find_xpath
-#     body:
-#     - '//*[@id="su"]'
-#     - '//*[@id="kw"]'
-#     timeout: 10
-# - name: tets-3
-#   url: http://www.baidu.com
-#   check:
-#   - type: find_xpath
-#     body:
-#     - '//*[@id="su"]'
-#     - '//*[@id="kw"]'
-#     timeout: 10
-# - name: tets-4
-#   url: http://www.baidu.com
-#   check:
-#   - type: find_xpath
-#     body:
-#     - '//*[@id="su"]'
-#     - '//*[@id="kw"]'
-#     timeout: 10
-# - name: tets-5
-#   url: http://www.baidu.com
-#   check:
-#   - type: find_xpath
-#     body:
-#     - '//*[@id="su"]'
-#     - '//*[@id="kw"]'
-#     timeout: 10
+- name: tets-2
+  url: http://www.baidu.com
+  check:
+  - type: find_xpath
+    body:
+    - '//*[@id="su"]'
+    - '//*[@id="kw"]'
+    timeout: 10
+- name: tets-3
+  url: http://www.baidu.com
+  check:
+  - type: find_xpath
+    body:
+    - '//*[@id="su"]'
+    - '//*[@id="kw"]'
+    timeout: 10
+- name: tets-4
+  url: http://www.baidu.com
+  check:
+  - type: find_xpath
+    body:
+    - '//*[@id="su"]'
+    - '//*[@id="kw"]'
+    timeout: 10
+- name: tets-5
+  url: http://www.baidu.com
+  check:
+  - type: find_xpath
+    body:
+    - '//*[@id="su"]'
+    - '//*[@id="kw"]'
+    timeout: 10

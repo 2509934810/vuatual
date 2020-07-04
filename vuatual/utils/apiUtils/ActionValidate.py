@@ -1,6 +1,6 @@
-from utils.SaveDb.mysql import Vmysql
+from vuatual.utils.SaveDb.mysql import Vmysql
 import re
-from utils.logs import logger
+from vuatual.utils.logs import logger
 
 # add save title
 class SaveTitle(object):
@@ -10,6 +10,6 @@ class SaveTitle(object):
         self.caseConfig = caseConfig
 
     def check(self):
-        titleFormat = re.compile(r"<title>([.*?])<title>")
+        titleFormat = re.compile(r"<title>(.*)</title>")
         titles = re.findall(titleFormat, self.client.text)
         logger.info(titles)

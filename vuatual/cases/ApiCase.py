@@ -1,7 +1,7 @@
-from core import BaseCase
+from vuatual.core import BaseCase
 import pytest
-from utils.apiUtils.getSession import getSession
-from utils.apiUtils import ACTION
+from vuatual.utils.apiUtils.getSession import getSession
+from vuatual.utils.apiUtils import ACTION
 
 
 class ApiCase(BaseCase):

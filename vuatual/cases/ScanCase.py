@@ -1,7 +1,7 @@
-from core import BaseCase
+from vuatual.core import BaseCase
 import pytest
 import socket
-from utils.exceptions import CaseFormatError
+from vuatual.utils.exceptions import CaseFormatError
 
 
 class ScanCase(BaseCase):

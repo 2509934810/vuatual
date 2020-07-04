@@ -1,13 +1,13 @@
-from core import BaseCase
+from vuatual.core import BaseCase
 import pytest
 import os
 from selenium import webdriver
-from utils.webUtils.clientAction import (
+from vuatual.utils.webUtils.clientAction import (
     check_element_by_css_can_click,
     check_element_by_css_can_find,
 )
-from utils.webUtils.getClient import getClient
-from utils.webUtils import ACTION
+from vuatual.utils.webUtils.getClient import getClient
+from vuatual.utils.webUtils import ACTION
 
 
 class WebCase(BaseCase):

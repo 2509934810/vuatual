@@ -13,7 +13,7 @@ from .clientAction import (
     check_element_by_xpath_can_click,
     check_element_by_xpath_can_find,
 )
-from utils.exceptions import CaseFormatError, CaseRunError, ElementNotFound
+from vuatual.utils.exceptions import CaseFormatError, CaseRunError, ElementNotFound
 
 
 class FindCssValidate(object):

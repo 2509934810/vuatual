@@ -1,6 +1,6 @@
 import pymysql
-from utils.logs import logger
-from utils.exceptions import DbConnection, SqlExecuteError
+from vuatual.utils.logs import logger
+from vuatual.utils.exceptions import DbConnection, SqlExecuteError
 
 
 class Vmysql:
