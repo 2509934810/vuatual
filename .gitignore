@@ -5,3 +5,7 @@ vuatual.egg-info/
 *.log
 src/*.log
 *.html
+.pytest_cache
+.vscode
+__pycache__
+

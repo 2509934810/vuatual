@@ -37,5 +37,6 @@ def collect():
 def __run_test(file, pytest_args):
     args = [file, "-v"]
     pytest_args += args
-    pytest_args += ["-W", "ignore:Module already imported:pytest.PytestWarning"]
+    pytest_args += ["-W", "ignore"]
+    print(pytest_args)
     return pytest.main(args=pytest_args)
