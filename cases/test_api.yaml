@@ -1,5 +1,7 @@
 type: api
 config:
+  protocol: http
+  host: "127.0.0.1:5000"
   authType: None
   save:
     type: sql
@@ -9,23 +11,108 @@ config:
     dbName: vuatual
 
 cases:
-- name: test_1
-  ip: http://www.baidu.com
-  type: get
-  check:
-  - type: get_title
-    timeout: 10
-  # - type: get_content
-  #   #正则表达式
-  #   body:
-  #   - ''
-- name: test_2
-  ip: http://www.taobao.com
-  type: get
-  check:
-  - type: get_title
-    timeout: 10
-  # - type: get_content
-  #   #正则表达式
-  #   body:
-  #   - ''
+  - name: brand_list
+    url: "/api/brand/list/1"
+    type: get
+    params:
+      keywords: ""
+      name_cn: ""
+      brand_id: ""
+    check:
+      - type: check_statusCode
+        statusCode: 200
+      - type: check_json_body
+        body:
+          statusCode: 200
+      - type: get_title
+        timeout: 10
+  - name: "brand_add"
+    url: "/api/brand/add"
+    type: "post"
+    data:
+      name_en: "test_name_en"
+      brand_id: "test_id"
+      name_cn: "test_name"
+      official_website: "test.com"
+      country_cn: "test_name_cn"
+      remark: "test"
+      description: "test_description"
+      keywords: "test,test"
+    check:
+      - type: check_statusCode
+        statusCode: 200
+      - type: check_json_body
+        body:
+          statusCode: 200
+  - name: 'brand_add_check':
+    url: '/api/brand/list/1'
+    type: 'get'
+    params:
+      keywords: ""
+      name_cn: ""
+      brand_id: ""
+    check:
+      - type: check_statusCode
+        statusCode: 200
+      - type: check_json_body
+        body:
+          statusCode: 200
+      - type: check_data_exist
+        tag: y
+        # y为存在，则通过用例
+        #该功能未添加
+        body:
+          brandList:
+            name_en: "test_name_en"
+            brand_id: "test_id"
+            name_cn: "test_name"
+  - name: "brand_delete"
+    url: "/api/brand/delete/<brand_id>"
+    type: "get"
+    check:
+      - type: check_statusCode
+        statusCode: 200
+      - type: check_json_body
+        body:
+          statusCode: 200
+  - name: "brand_delete_check"
+    url: "/api/brand/list/1"
+    type: get
+    params:
+      keywords: ""
+      name_cn: ""
+      brand_id: ""
+    check:
+      - type: check_statusCode
+        statusCode: 200
+      - type: check_json_body
+        body:
+          statusCode: 200
+  # - name: "brand_update"
+  #   url: "/api/brand/update/<brand_id>"
+  #   type: "post"
+  #   data:
+  #     brand_id: ""
+  #     official_website: ""
+  #     country_cn: ""
+  #     remark: ""
+  #     description: ""
+  #     name_cn: ""
+  #     keywords: ""
+  #   check:
+  #     - type: check_statusCode
+  #       statusCode: 200
+  #     - type: check_json_body
+  #       body:
+  #         statusCode: 200
+  # - name: brand_query
+  #   url: "/api/brand/query"
+  #   type: get
+  #   check:
+  #     - type: check_statusCode
+  #       statusCode: 200
+  #     - type: check_json_body
+  #       body:
+  #         statusCode: 200
+  #     - type: get_title
+  #       timeout: 10
