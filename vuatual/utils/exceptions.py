@@ -6,6 +6,22 @@ class CaseParserError(Exception):
         return self.msg
 
 
+class ChromeDriverError(Exception):
+    def __init__(self, msg):
+        self.msg = msg
+
+    def __str__(self):
+        return self.msg
+
+
+class RequestConnError(Exception):
+    def __init__(self, msg):
+        self.msg = msg
+
+    def __str__(self):
+        return self.msg
+
+
 class CaseTypeNotFound(Exception):
     """[不支持的Case类型]
 

@@ -8,6 +8,7 @@ from vuatual.utils.webUtils.clientAction import (
 )
 from vuatual.utils.webUtils.getClient import getClient
 from vuatual.utils.webUtils import ACTION
+from vuatual.utils.exceptions import ChromeDriverError
 
 
 class WebCase(BaseCase):
@@ -29,6 +30,15 @@ class WebCase(BaseCase):
             client.get(self.caseItem.get("url"))
             for checkbody in self.caseItem.get("check"):
                 _runcheck(client, self.name, checkbody)
+        except Exception:
+            raise ChromeDriverError(
+                """
+                    =========================chrome driver error=======================================\n
+                    chrome driver not found in path\n
+                    Please Download  the plugin in http://npm.taobao.org/mirrors/chromedriver/ \n
+                    ===================================================================================\n
+                """
+            )
         finally:
             client.quit()
 

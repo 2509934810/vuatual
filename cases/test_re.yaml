@@ -1,0 +1,19 @@
+type: api
+config:
+  authType: none
+  parameters:
+    pagenum:
+      # range: 1-100
+      # dict:
+      #   key: value
+      #   key_2: value_2
+#design a plugin to capture data
+cases:
+  - name: test_1
+    url: http://www.cnnvd.org.cn
+    check:
+      while:
+      - save_data:
+          # use re
+          title: re_1
+        stop: 100

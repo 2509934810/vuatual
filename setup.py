@@ -10,7 +10,7 @@ setup(
         "selenium==3.141.0",
         "PyMySQL==0.10.0",
         "requests==2.24.0",
-        "pytest-parallel==0.1.0",
+        "ruamel.yaml==0.16.12",
     ],
     packages=find_packages(),
     include_package_data=True,

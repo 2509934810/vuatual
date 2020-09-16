@@ -1,5 +1,5 @@
-# vuatual
-
+# vuatual is a pytest plugin which deigned to test your plaform and scapy data
+# quick start to use vuatual framework
 1 pipenv shell
 
 2 pipenv install --dev

@@ -44,7 +44,7 @@ cases:
       - type: check_json_body
         body:
           statusCode: 200
-  - name: 'brand_add_check':
+  - name: brand_add_check
     url: '/api/brand/list/1'
     type: 'get'
     params:

@@ -1,5 +1,5 @@
 import pytest
-import yaml
+import ruamel.yaml as yaml
 from vuatual.cases import CASETYPE
 from vuatual.utils.exceptions import CaseParserError, CaseTypeNotFound
 
