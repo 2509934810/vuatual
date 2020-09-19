@@ -57,15 +57,15 @@ cases:
       - type: check_json_body
         body:
           statusCode: 200
-      - type: check_data_exist
-        tag: y
-        # y为存在，则通过用例
-        #该功能未添加
-        body:
-          brandList:
-            name_en: "test_name_en"
-            brand_id: "test_id"
-            name_cn: "test_name"
+      # - type: check_data_exist
+      #   tag: y
+      #   # y为存在，则通过用例
+      #   #该功能未添加
+      #   body:
+      #     brandList:
+      #       name_en: "test_name_en"
+      #       brand_id: "test_id"
+      #       name_cn: "test_name"
   - name: "brand_delete"
     url: "/api/brand/delete/<brand_id>"
     type: "get"

@@ -12,6 +12,9 @@ config:
   browserType: "chrome"
   browserPath: "/usr/local/bin/chromedriver"
   # browserPath: "/usr/local/bin/geckodriver"
+  # output log and other info
+  filepath: ./tmp
+
 cases:
   - name: test-1
     url: http://www.baidu.com

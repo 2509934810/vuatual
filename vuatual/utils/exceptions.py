@@ -14,6 +14,14 @@ class ChromeDriverError(Exception):
         return self.msg
 
 
+class ActionCheckError(Exception):
+    def __init__(self, msg):
+        self.msg = msg
+
+    def __str__(self):
+        return self.msg
+
+
 class RequestConnError(Exception):
     def __init__(self, msg):
         self.msg = msg
